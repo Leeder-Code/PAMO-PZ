@@ -1,5 +1,7 @@
 # PAMO - Projekt zaliczeniowy
 
+Aplikacja "Finansowy Menedżer" to intuicyjne narzędzie do zarządzania finansami osobistymi, które umożliwia dodawanie i kategoryzację wydatków, ustawianie miesięcznych budżetów, generowanie szczegółowych raportów finansowych oraz zarządzanie przypomnieniami o terminach płatności rachunków. Dzięki tym funkcjom użytkownicy mogą lepiej monitorować swoje wydatki, planować oszczędności i unikać opóźnień w płatnościach.
+
 Lista funkcjonalności Aplikacji do Zarządzania Finansami:
 
 **MVP (Minimum Viable Product) w kolejności wg priorytetów:**
