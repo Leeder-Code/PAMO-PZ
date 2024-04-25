@@ -22,3 +22,6 @@ Lista funkcjonalności Aplikacji do Zarządzania Finansami:
 - Następne 3 tygodnie na dodanie funkcjonalności analiz, raportów i przypomnień.
 
 #### Ostatni tydzień: Faza testów i optymalizacji
+
+## Lista zadań z systemu do śledzenia postępów (Trello)
+![todo-v1](./screens/todo-v1.png 'todo-v1')
