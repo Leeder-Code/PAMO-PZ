@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">pamo-pz</string>
+    <string-array name="months_array">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <string-array name="categories_array">
+        <item>Food</item>
+        <item>Transportation</item>
+        <item>Entertainment</item>
+        <item>Utilities</item>
+        <item>Shopping</item>
+        <item>Healthcare</item>
+        <item>Clothing</item>
+        <item>Eating Out</item>
+        <item>Education</item>
+        <item>Gifts</item>
+        <item>Insurance</item>
+        <item>Personal Care</item>
+        <item>Travel</item>
+        <item>Home Maintenance</item>
+        <item>Charity</item>
+        <item>Savings</item>
+        <item>Investments</item>
+        <item>Debt Repayment</item>
+        <item>Subscriptions</item>
+        <item>Others</item>
+    </string-array>
+</resources>
