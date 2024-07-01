@@ -1,3 +1,27 @@
+# PAMO - Projekt zaliczeniowy - POPRAWA
+
+## Day 1 - 01.07.2024
+
+- Creating a new board on Trello
+- Determining the requirements for the new functionality
+- Planning to-do list
+- Selection tasks for the next day
+- Scheduling daily meetings
+
+![todo-poprawa-v1](./screens/todo-poprawa-v1.png 'todo-v1')
+
+
+## Day 2 - 02.07.2024
+...
+
+
+
+
+
+
+
+
+
 # PAMO - Projekt zaliczeniowy
 
 Aplikacja "Finansowy Menedżer" to intuicyjne narzędzie do zarządzania finansami osobistymi, które umożliwia dodawanie i kategoryzację wydatków, ustawianie miesięcznych budżetów, generowanie szczegółowych raportów finansowych oraz zarządzanie przypomnieniami o terminach płatności rachunków. Dzięki tym funkcjom użytkownicy mogą lepiej monitorować swoje wydatki, planować oszczędności i unikać opóźnień w płatnościach.
