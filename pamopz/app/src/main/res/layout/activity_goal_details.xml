@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Goal Name -->
+    <TextView
+        android:id="@+id/textViewGoalName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Goal Name"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBarGoal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:max="100"
+        android:progress="50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewGoalName" />
+
+    <!-- Progress Text -->
+    <TextView
+        android:id="@+id/textViewProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Progress: 50%"
+        android:textSize="18sp"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/progressBarGoal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Amount Details -->
+    <LinearLayout
+        android:id="@+id/linearLayoutAmountDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewProgress">
+
+        <!-- Remaining Amount -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewRemainingLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Remaining:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewRemainingAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$300"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <!-- Saved Amount -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewSavedLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Saved:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewSavedAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$200"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <!-- Months Left -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewMonthsLeftLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Time left:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewMonthsLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 months"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <!-- Monthly Deposit Amount -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewMonthlyDepositLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deposit:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewMonthlyDepositAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$500"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Previous Contributions -->
+    <TextView
+        android:id="@+id/textViewPreviousContributionsTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Previous Contributions:"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutAmountDetails" />
+
+    <!-- List of Previous Contributions -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listViewTransactions"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPreviousContributionsTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="16dp"
+        tools:listitem="@layout/item_previous_contribution" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
