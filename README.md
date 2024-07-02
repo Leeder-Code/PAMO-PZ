@@ -1,5 +1,43 @@
 # PAMO - Projekt zaliczeniowy - POPRAWA
 
+
+
+
+## New Functionality: Savings Goals
+
+### New Savings Goals Page
+A new section has been added to the application to help users set and manage their savings goals. This includes:
+
+1. **Adding a New Savings Goal**
+   - **Goal Name**: The name of the savings goal.
+   - **Description**: A description of what the funds are being saved for.
+   - **Monthly Savings Amount**: The amount the user wants to save each month towards the goal.
+   - **Target Amount**: The total amount the user aims to save.
+
+2. **Progress Tracking**
+   - A progress bar that shows the percentage of the target amount that has been saved.
+   - Display of the estimated time required to reach the savings goal based on the current saving rate.
+
+3. **Goal Details**
+   - Detailed view of each savings goal.
+   - Recent contributions to the savings goal with dates.
+
+4. **Goal Management**
+   - Ability to delete a savings goal.
+
+## Features
+- **Savings Goals**: Set, track, and manage your savings goals with detailed progress indicators and contribution tracking.
+
+## Requirements
+- Android 5.0 or higher
+
+## Task Distribution and Planning
+- **Task Assignment**: Tasks are assigned based on team members' expertise and availability.
+- **Equal Distribution**: Tasks are distributed as evenly as possible to ensure fair workload.
+- **Task List**: A comprehensive task list in Trello is maintained, with clear deadlines and responsibilities.
+- **Sufficient Tasks**: Adequate tasks are planned to cover all aspects of the new functionality and ongoing maintenance.
+
+
 ## Day 1 - 01.07.2024
 
 - Creating a new board on Trello
