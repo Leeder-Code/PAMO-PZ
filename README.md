@@ -53,9 +53,13 @@ A new section has been added to the application to help users set and manage the
 
 - Creating KDocs for Activities
 - Selecting tasks for the next day
+- Creating KDocs for AddExpenseActivity, SetBudgetActivity
+- Creating layout for savings goals and savings goals details
+- Adding information about new functionality on Readme.md
 
 
 ![todo-poprawa-v2](./screens/todo-poprawa-v2.png 'todo-poprawa-v2')
+![todo-poprawa-v2_2](./screens/todo-poprawa-v2_2.png 'todo-poprawa-v2_2')
 
 
 
