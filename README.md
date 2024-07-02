@@ -8,7 +8,7 @@
 - Selecting tasks for the next day
 - Scheduling daily meetings
 
-![todo-poprawa-v1](./screens/todo-poprawa-v1.png 'todo-v1')
+![todo-poprawa-v1](./screens/todo-poprawa-v1.png 'todo-poprawa-v2')
 
 
 ## Day 2 - 02.07.2024
@@ -17,7 +17,7 @@
 - Selecting tasks for the next day
 
 
-
+![todo-poprawa-v2](./screens/todo-poprawa-v2.png 'todo-poprawa-v2')
 
 
 
