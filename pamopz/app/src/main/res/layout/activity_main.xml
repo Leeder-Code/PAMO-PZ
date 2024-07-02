@@ -106,8 +106,6 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/textViewTransactionsLabel"
         app:layout_constraintEnd_toEndOf="parent"
@@ -126,7 +124,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Set Budget" />
+            android:text="Budget" />
 
         <Button
             android:id="@+id/btnReports"
@@ -135,14 +133,19 @@
             android:layout_weight="1"
             android:text="Reports" />
 
+        <Button
+            android:id="@+id/btnSavings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Savings" />
+
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
