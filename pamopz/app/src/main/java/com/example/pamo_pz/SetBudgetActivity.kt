@@ -10,9 +10,19 @@ import com.example.pamo_pz.databinding.ActivitySetBudgetBinding
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
+/**
+ * SetBudgetActivity is responsible for setting a budget for a selected month.
+ * Users can input a budget amount and select a month from a dropdown menu.
+ */
 class SetBudgetActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySetBudgetBinding
 
+    /**
+     * Called when the activity is starting. Initializes the UI components.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after previously being shut down,
+     * this contains the data it most recently supplied. Otherwise, it is null.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySetBudgetBinding.inflate(layoutInflater)
@@ -43,6 +53,11 @@ class SetBudgetActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Sets up the spinner with month options from a predefined array resource.
+     *
+     * @param spinner The Spinner UI component to be set up.
+     */
     private fun setupSpinner(spinner: Spinner) {
         val months = resources.getStringArray(R.array.months_array)
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, months)
@@ -50,6 +65,11 @@ class SetBudgetActivity : AppCompatActivity() {
         spinner.adapter = adapter
     }
 
+    /**
+     * Inserts the budget transaction into the database.
+     *
+     * @param transaction The Transaction object representing the budget to be set.
+     */
     private fun setBudget(transaction: Transaction) {
         val db = Room.databaseBuilder(this, AppDatabase::class.java, "transactions").build()
         GlobalScope.launch {
