@@ -5,15 +5,16 @@
 - Creating a new board on Trello
 - Determining the requirements for the new functionality
 - Planning to-do list
-- Selection tasks for the next day
+- Selecting tasks for the next day
 - Scheduling daily meetings
 
 ![todo-poprawa-v1](./screens/todo-poprawa-v1.png 'todo-v1')
 
 
 ## Day 2 - 02.07.2024
-...
 
+- Creating KDocs for Activities
+- Selecting tasks for the next day
 
 
 
