@@ -56,14 +56,23 @@ A new section has been added to the application to help users set and manage the
 - Creating KDocs for AddExpenseActivity, SetBudgetActivity
 - Creating layout for savings goals and savings goals details
 - Adding information about new functionality on Readme.md
-
+- Code review
 
 ![todo-poprawa-v2](./screens/todo-poprawa-v2.png 'todo-poprawa-v2')
 ![todo-poprawa-v2_2](./screens/todo-poprawa-v2_2.png 'todo-poprawa-v2_2')
 
+## Day 3 - 03.07.2024
 
+- Creating GoalsActivity
+- Creating Goal entity in database
+- Creating goals table in database
+- Changing AppDatabase to singleton
+- Creating GoalsAdapter
+- Creating KDocs for GoalsActivity, Goal, GoalsDao, GoalsAdapter
+- Selecting tasks for the next day
+- Code review
 
-
+![todo-poprawa-v3](./screens/todo-poprawa-v3.png 'todo-poprawa-v3')
 
 # PAMO - Projekt zaliczeniowy
 
