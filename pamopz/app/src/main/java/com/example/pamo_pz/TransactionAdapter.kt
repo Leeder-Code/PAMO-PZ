@@ -28,6 +28,7 @@ class TransactionAdapter(private var transactions: List<Transaction>) :
                 )
             }
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransactionViewHolder {
@@ -51,6 +52,5 @@ class TransactionAdapter(private var transactions: List<Transaction>) :
         this.transactions = transactions
         notifyDataSetChanged()
     }
-
 
 }
