@@ -1,5 +1,6 @@
 package com.example.pamo_pz
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -41,11 +42,11 @@ class GoalsActivity : AppCompatActivity() {
 
         // Set click listener for adding a new goal
         binding.buttonAddGoal.setOnClickListener {
-            //            TODO: Add goal
-            //            val intent = Intent(this, )
-            //            startActivity(intent)
-            println("Add goal")
+            val intent = Intent(this, AddGoalActivity::class.java)
+            startActivity(intent)
         }
+
+
         // Fetch all goals from the database when the activity is created
         fetchAll()
     }

@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pamopz"
         tools:targetApi="31">
+        <activity android:name=".AddGoalActivity" />
         <activity
             android:name=".GoalsActivity"
             android:exported="false" />
