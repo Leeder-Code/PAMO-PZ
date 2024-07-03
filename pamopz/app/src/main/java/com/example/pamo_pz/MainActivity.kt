@@ -22,7 +22,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var transactionAdapter: TransactionAdapter
     private var transactions: List<Transaction> = arrayListOf()
-    private lateinit var db: AppDatabase
+
+    /**
+     * Get database Singleton
+     */
+    private val db by lazy { AppDatabase.getDatabase(this) }
+
     /**
      * Called when the activity is starting. Initializes the UI and database.
      *
@@ -66,10 +71,6 @@ class MainActivity : AppCompatActivity() {
         }
         val swipeHelper = ItemTouchHelper(itemTouchHelper)
         swipeHelper.attachToRecyclerView(binding.listViewTransactions)
-        /**
-         * Initialize the database
-         */
-        db = Room.databaseBuilder(this, AppDatabase::class.java, "transactions").build()
 
         /**
          * Setup buttons and their click listeners
@@ -88,11 +89,16 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ReportsActivity::class.java)
             startActivity(intent)
         }
+        binding.btnSavings.setOnClickListener {
+            val intent = Intent(this, GoalsActivity::class.java)
+            startActivity(intent)
+        }
         /**
          * Fetch all transactions from the database
          */
         fetchAll()
     }
+
     /**
      * Updates the total balance displayed in the UI.
      */
@@ -100,6 +106,7 @@ class MainActivity : AppCompatActivity() {
         val totalBalance = transactions.sumOf { if (it.isIncome) it.amount else -it.amount }
         binding.textViewTotalBalance.text = String.format("$%.2f", totalBalance)
     }
+
     /**
      * Updates the budget and expense amounts displayed in the UI.
      */
@@ -109,6 +116,7 @@ class MainActivity : AppCompatActivity() {
         binding.textViewBudget.text = String.format("$%.2f", totalIncome)
         binding.textViewExpense.text = String.format("$%.2f", totalExpense)
     }
+
     /**
      * Fetches all transactions from the database and updates the UI.
      */
@@ -123,6 +131,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
     /**
      * Removes a transaction from the database.
      *
@@ -134,6 +143,7 @@ class MainActivity : AppCompatActivity() {
             fetchAll()
         }
     }
+
     /**
      * Called when the activity will start interacting with the user.
      */
