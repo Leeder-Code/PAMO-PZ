@@ -71,8 +71,13 @@ A new section has been added to the application to help users set and manage the
 - Creating KDocs for GoalsActivity, Goal, GoalsDao, GoalsAdapter
 - Selecting tasks for the next day
 - Code review
+- Crating AddGoalActivity xml layout
+- Creating AddGoalActivity with KDocs (form to add a goal: goal name, description, monthly amount set aside, amount to be collected).
+- Creating testMonkey AddGoalActivity
 
 ![todo-poprawa-v3](./screens/todo-poprawa-v3.png 'todo-poprawa-v3')
+![todo-poprawa-v3_2](./screens/todo-poprawa-v3_2.png 'todo-poprawa-v3_2')
+
 
 # PAMO - Projekt zaliczeniowy
 
