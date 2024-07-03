@@ -14,6 +14,10 @@ import kotlinx.coroutines.launch
  */
 class AddExpenseActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddExpenseBinding
+    /**
+     * Get database Singleton
+     */
+    private val db by lazy{ AppDatabase.getDatabase(this)}
 
     /**
      * Called when the activity is starting. Initializes the UI components.
@@ -74,7 +78,6 @@ class AddExpenseActivity : AppCompatActivity() {
      * @param transaction The Transaction object to be inserted into the database.
      */
     private fun insert(transaction: Transaction) {
-        val db = Room.databaseBuilder(this, AppDatabase::class.java, "transactions").build()
         GlobalScope.launch {
             db.transactionDao().insertAll(transaction)
             finish()

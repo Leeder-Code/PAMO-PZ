@@ -5,7 +5,6 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.room.Room
 import com.example.pamo_pz.databinding.ActivitySetBudgetBinding
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -16,6 +15,11 @@ import kotlinx.coroutines.launch
  */
 class SetBudgetActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySetBudgetBinding
+
+    /**
+     * Get database Singleton
+     */
+    private val db by lazy { AppDatabase.getDatabase(this) }
 
     /**
      * Called when the activity is starting. Initializes the UI components.
@@ -71,7 +75,6 @@ class SetBudgetActivity : AppCompatActivity() {
      * @param transaction The Transaction object representing the budget to be set.
      */
     private fun setBudget(transaction: Transaction) {
-        val db = Room.databaseBuilder(this, AppDatabase::class.java, "transactions").build()
         GlobalScope.launch {
             db.transactionDao().insertAll(transaction)
             finish()

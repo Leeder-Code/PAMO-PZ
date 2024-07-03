@@ -20,7 +20,10 @@ class ReportsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityReportsBinding
     private lateinit var transactionAdapter: TransactionAdapter
     private var transactions: List<Transaction> = listOf()
-    private lateinit var db: AppDatabase
+    /**
+     * Get database Singleton
+     */
+    private val db by lazy{ AppDatabase.getDatabase(this)}
 
     /**
      * Called when the activity is starting. Initializes the UI and database.
@@ -33,10 +36,6 @@ class ReportsActivity : AppCompatActivity() {
         binding = ActivityReportsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /**
-         * Initialize the database
-         */
-        db = Room.databaseBuilder(this, AppDatabase::class.java, "transactions").build()
 
 
         /**
