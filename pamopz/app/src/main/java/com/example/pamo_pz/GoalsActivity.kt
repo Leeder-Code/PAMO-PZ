@@ -33,7 +33,7 @@ class GoalsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Initialize the goals adapter and bind it to the RecyclerView
-        goalsAdapter = GoalsAdapter(goals)
+        goalsAdapter = GoalsAdapter(goals, this)
         binding.recyclerViewGoals.apply {
             layoutManager = LinearLayoutManager(this@GoalsActivity)
             adapter = goalsAdapter

@@ -1,8 +1,11 @@
 package com.example.pamo_pz
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pamo_pz.databinding.ItemSavingsGoalBinding
 
@@ -11,7 +14,7 @@ import com.example.pamo_pz.databinding.ItemSavingsGoalBinding
  *
  * @property goals List of goals to display.
  */
-class GoalsAdapter(private var goals: List<Goal>) :
+class GoalsAdapter(private var goals: List<Goal>, private val context: Context) :
     RecyclerView.Adapter<GoalsAdapter.GoalViewHolder>() {
     /**
      * ViewHolder for displaying individual goals.
@@ -31,6 +34,16 @@ class GoalsAdapter(private var goals: List<Goal>) :
             binding.textViewGoalDescription.text = goal.description
             binding.textViewAmountSaved.text = "$${goal.value} / $${goal.target}"
             binding.progressBarGoal.setProgress(((goal.value / goal.target) * 100).toInt())
+            binding.root.setOnClickListener{
+                val intent = Intent(context, GoalDetailsActivity::class.java)
+                intent.putExtra("name", goal.name)
+                intent.putExtra("description", goal.description)
+                intent.putExtra("value", goal.value)
+                intent.putExtra("target", goal.target)
+                intent.putExtra("id", goal.id)
+                context.startActivity(intent)
+            }
+
         }
     }
 
