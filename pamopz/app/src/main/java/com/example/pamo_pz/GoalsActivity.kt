@@ -3,6 +3,7 @@ package com.example.pamo_pz
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pamo_pz.databinding.ActivitySavingsGoalsBinding
 import kotlinx.coroutines.GlobalScope
@@ -25,7 +26,6 @@ class GoalsActivity : AppCompatActivity() {
      */
     private var goals: List<Goal> = arrayListOf()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -38,7 +38,6 @@ class GoalsActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@GoalsActivity)
             adapter = goalsAdapter
         }
-//        db = Room.databaseBuilder(this, AppDatabase::class.java, "test").build()
 
         // Set click listener for adding a new goal
         binding.buttonAddGoal.setOnClickListener {
@@ -46,9 +45,11 @@ class GoalsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
         // Fetch all goals from the database when the activity is created
         fetchAll()
+
+        // Set up swipe-to-delete functionality
+        setupSwipeToDelete()
     }
 
     /**
@@ -59,8 +60,41 @@ class GoalsActivity : AppCompatActivity() {
             goals = db.goalsDao().getAll()
 
             runOnUiThread {
-                 goalsAdapter.setData(goals)
+                goalsAdapter.setData(goals)
             }
+        }
+    }
+
+    /**
+     * Sets up swipe-to-delete functionality for goals.
+     */
+    private fun setupSwipeToDelete() {
+        val itemTouchHelper = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+            override fun onMove(
+                recyclerView: androidx.recyclerview.widget.RecyclerView,
+                viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder,
+                target: androidx.recyclerview.widget.RecyclerView.ViewHolder
+            ): Boolean {
+                return false
+            }
+
+            override fun onSwiped(viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder, direction: Int) {
+                removeGoal(goals[viewHolder.adapterPosition])
+            }
+        }
+        val swipeHelper = ItemTouchHelper(itemTouchHelper)
+        swipeHelper.attachToRecyclerView(binding.recyclerViewGoals)
+    }
+
+    /**
+     * Removes a goal from the database.
+     *
+     * @param goal The goal to be removed.
+     */
+    private fun removeGoal(goal: Goal) {
+        GlobalScope.launch {
+            db.goalsDao().delete(goal)
+            fetchAll()
         }
     }
 
@@ -69,6 +103,5 @@ class GoalsActivity : AppCompatActivity() {
         // Refresh data if any changes were made
         fetchAll()
         goalsAdapter.notifyDataSetChanged()
-
     }
 }
