@@ -42,7 +42,7 @@ class GoalDetailsActivity : AppCompatActivity() {
 
         binding.textViewGoalName.text = name
         binding.textViewProgress.text = getProgress()
-        binding.textViewRemainingAmount.text = "$${(target - value)}"
+        binding.textViewRemainingAmount.text = getRemainingValue()
         binding.textViewSavedAmount.text = "$$value"
         binding.textViewMonthsLeft.text = getMonthsLeft()
         binding.textViewMonthlyDepositAmount.text = "$${monthlyDeposit}"
@@ -78,6 +78,7 @@ class GoalDetailsActivity : AppCompatActivity() {
                 binding.textViewSavedAmount.text = "$${value}"
                 binding.textViewProgress.text = getProgress()
                 binding.textViewMonthsLeft.text = getMonthsLeft()
+                binding.textViewRemainingAmount.text = getRemainingValue()
             }
             val goal = Goal(name, description, value, monthlyDeposit, target, id)
             db.goalsDao().update(goal)
@@ -103,5 +104,8 @@ class GoalDetailsActivity : AppCompatActivity() {
 
     private fun getMonthsLeft(): String {
         return "${((target-value) / monthlyDeposit).toInt()} months"
+    }
+    private fun getRemainingValue(): String{
+        return "$${(target - value)}"
     }
 }
