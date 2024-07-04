@@ -90,8 +90,7 @@ class GoalDetailsActivity : AppCompatActivity() {
                     "Saving goal $name",
                     currentMonthFullName,
                     name,
-                    monthlyDeposit,
-                    true
+                    monthlyDeposit
                 )
             )
             getTransactions()
