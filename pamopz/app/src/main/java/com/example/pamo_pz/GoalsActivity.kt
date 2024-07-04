@@ -59,15 +59,7 @@ class GoalsActivity : AppCompatActivity() {
             goals = db.goalsDao().getAll()
 
             runOnUiThread {
-                // goalsAdapter.setData(goals)
-
-                // For now, mock data to visualize layout
-                goalsAdapter.setData(
-                    listOf(
-                        Goal("Test", "Test opis", 480.0, 500.0),
-                        Goal("test2", "test2 opis", 50.0, 250.0)
-                    )
-                )
+                 goalsAdapter.setData(goals)
             }
         }
     }
