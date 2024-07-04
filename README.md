@@ -78,6 +78,14 @@ A new section has been added to the application to help users set and manage the
 ![todo-poprawa-v3](./screens/todo-poprawa-v3.png 'todo-poprawa-v3')
 ![todo-poprawa-v3_2](./screens/todo-poprawa-v3_2.png 'todo-poprawa-v3_2')
 
+## Day 4 - 04.07.2024
+
+- Creting GoalDetailsActivity
+- Chaning Goal schema in database
+- Loading Goals from database
+- Connecting Goals and Transactions logic
+
+
 
 # PAMO - Projekt zaliczeniowy
 
