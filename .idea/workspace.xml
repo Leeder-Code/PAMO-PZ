@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16903fa5-0319-4c53-be8c-dde96407b3e0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/screens/todo-poprawa-v4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -36,11 +38,12 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Gutow/Downloads/pamo/PAMO-PZ"
+    "last_opened_file_path": "C:/Users/szend/Downloads/PAMO"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\szend\Downloads\PAMO\screens" />
       <recent name="C:\Users\Gutow\Downloads\pamo\PAMO-PZ\screens" />
     </key>
   </component>

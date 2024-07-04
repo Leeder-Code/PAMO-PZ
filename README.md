@@ -80,10 +80,14 @@ A new section has been added to the application to help users set and manage the
 
 ## Day 4 - 04.07.2024
 
-- Creting GoalDetailsActivity
-- Chaning Goal schema in database
+- Creating GoalDetailsActivity
+- Changing Goal schema in database
 - Loading Goals from database
 - Connecting Goals and Transactions logic
+- Creating Espresso AddExpenseActivityTest
+- Creating function to delete savings goals
+
+![todo-poprawa-v4](./screens/todo-poprawa-v4.png 'todo-poprawa-v4')
 
 
 
