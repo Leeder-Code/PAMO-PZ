@@ -17,6 +17,7 @@ data class Goal(
     val name: String,
     val description: String,
     val value: Double,
+    val monthlyDeposit: Double,
     val target: Double,
     @PrimaryKey(autoGenerate = true) val id: Int = 0
 )

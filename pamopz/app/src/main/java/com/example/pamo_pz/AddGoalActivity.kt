@@ -45,7 +45,7 @@ class AddGoalActivity : AppCompatActivity() {
         val monthlyAmount = binding.editTextMonthlyAmount.text.toString().toDoubleOrNull() ?: 0.0
         val targetAmount = binding.editTextTargetAmount.text.toString().toDoubleOrNull() ?: 0.0
 
-        val goal = Goal(name, description, monthlyAmount, targetAmount)
+        val goal = Goal(name, description, 0.00, monthlyAmount, targetAmount)
         insert(goal)
     }
 
