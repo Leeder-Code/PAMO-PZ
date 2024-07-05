@@ -12,15 +12,24 @@ import java.time.format.TextStyle
 import java.util.Locale
 import kotlin.properties.Delegates
 
+/**
+ * Activity for displaying details of a saving goal.
+ */
 open class GoalDetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGoalDetailsBinding
 
+
     /**
-     * Database instance for accessing goals data.
+     * Adapter for managing transactions related to the goal.
      */
     private lateinit var transactionAdapter: TransactionAdapter
     private lateinit var filteredTransactions: List<Transaction>
+    /**
+     * Database instance for accessing goals data.
+     */
     private val db by lazy { AppDatabase.getDatabase(this) }
+
+    // Goal details variables
     private lateinit var name: String
     private lateinit var description: String
     private var value by Delegates.notNull<Double>()
@@ -33,6 +42,7 @@ open class GoalDetailsActivity : AppCompatActivity() {
         binding = ActivityGoalDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Retrieve intent extras
         name = intent.getStringExtra("name").toString()
         description = intent.getStringExtra("description").toString()
         value = intent.getDoubleExtra("value", 0.00)
@@ -40,6 +50,7 @@ open class GoalDetailsActivity : AppCompatActivity() {
         target = intent.getDoubleExtra("target", 0.00)
         id = intent.getIntExtra("id", 0)
 
+        // Set initial UI values
         binding.textViewGoalName.text = name
         binding.textViewProgress.text = getProgress(value, target)
         binding.textViewRemainingAmount.text = getRemainingValue(target, value)
@@ -47,17 +58,23 @@ open class GoalDetailsActivity : AppCompatActivity() {
         binding.textViewMonthsLeft.text = getMonthsLeft(target, value, monthlyDeposit)
         binding.progressBarGoal.setProgress((value/target*100).toInt())
 
+        // Initialize transaction list and adapter
         getTransactions()
         transactionAdapter = TransactionAdapter(listOf())
         binding.listViewTransactions.apply {
             layoutManager = LinearLayoutManager(this@GoalDetailsActivity)
             adapter = transactionAdapter
         }
+
+        // Button click listener for deposit update
         binding.buttonMonthlyDeposit.setOnClickListener {
             updateGoal()
         }
     }
 
+    /**
+     * Fetches transactions related to the current goal from the database.
+     */
     private fun getTransactions() {
         GlobalScope.launch {
             val transactions = db.transactionDao().getAll()
@@ -67,7 +84,9 @@ open class GoalDetailsActivity : AppCompatActivity() {
             }
         }
     }
-
+    /**
+     * Updates the goal with a monthly deposit and updates UI accordingly.
+     */
     fun updateGoal() {
         GlobalScope.launch {
             if (target < value + monthlyDeposit) {
@@ -97,14 +116,21 @@ open class GoalDetailsActivity : AppCompatActivity() {
             getTransactions()
         }
     }
-
+    /**
+     * Calculates and returns the progress of the goal in percentage.
+     */
     fun getProgress(target: Double, value: Double): String {
         return "Progress: ${(value / target * 100).toInt()}%"
     }
-
+    /**
+     * Calculates and returns the number of months left to reach the goal.
+     */
     fun getMonthsLeft(target: Double, value: Double, monthlyDeposit: Double): String {
         return "${((target-value) / monthlyDeposit).toInt()} months"
     }
+    /**
+     * Calculates and returns the remaining amount needed to reach the goal.
+     */
     fun getRemainingValue(target: Double, value: Double): String{
         return "$${(target - value)}"
     }
