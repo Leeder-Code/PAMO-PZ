@@ -89,6 +89,18 @@ A new section has been added to the application to help users set and manage the
 
 ![todo-poprawa-v4](./screens/todo-poprawa-v4.png 'todo-poprawa-v4')
 
+## Day 5 - 05.07.2024
+
+- Updating tests
+- Adding Mocikto for unit tests
+- Updating GoalDetails layout
+- Updating GoalDetailsActivity to new Layout
+- Updating goal progress bar
+- Creating Unit tests for - getProgress, getMonthsLeft, getRemainingValue functions
+- Checking app on call
+ 
+
+![todo-poprawa-v5](./screens/todo-poprawa-v5.png 'todo-poprawa-v5')
 
 
 # PAMO - Projekt zaliczeniowy
