@@ -98,10 +98,24 @@ A new section has been added to the application to help users set and manage the
 - Updating goal progress bar
 - Creating Unit tests for - getProgress, getMonthsLeft, getRemainingValue functions
 - Checking app on call
- 
+
 
 ![todo-poprawa-v5](./screens/todo-poprawa-v5.png 'todo-poprawa-v5')
 
+
+## Tests
+
+### Unit tests
+
+![unit-tests](./screens/unit-tests.png 'unit-tests')
+
+### Monkey tests
+
+![monkey-tests](./screens/monkey-tests.png 'monkey-tests')
+
+### Espresso tests
+
+![espresso-tests](./screens/espresso-tests.png 'espresso-tests')
 
 # PAMO - Projekt zaliczeniowy
 
