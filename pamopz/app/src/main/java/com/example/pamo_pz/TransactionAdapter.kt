@@ -4,12 +4,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pamo_pz.Transaction
 import com.example.pamo_pz.databinding.ItemTransactionBinding
 
+/**
+ * Adapter for displaying a list of transactions in a RecyclerView.
+ *
+ * @param transactions List of transactions to display.
+ */
 class TransactionAdapter(private var transactions: List<Transaction>) :
     RecyclerView.Adapter<TransactionAdapter.TransactionViewHolder>() {
 
     inner class TransactionViewHolder(private val binding: ItemTransactionBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        /**
+         * ViewHolder for each transaction item.
+         *
+         * @param binding View binding object for the transaction item layout.
+         */
         fun bind(transaction: Transaction) {
             binding.textViewTransactionName.text = transaction.name
             binding.textViewTransactionDate.text = transaction.month
@@ -42,12 +52,20 @@ class TransactionAdapter(private var transactions: List<Transaction>) :
     }
 
     override fun getItemCount(): Int = transactions.size
-
+    /**
+     * Updates the list of transactions with new data.
+     *
+     * @param newTransactions New list of transactions to display.
+     */
     fun updateTransactions(newTransactions: List<Transaction>) {
         transactions = newTransactions
         notifyDataSetChanged()
     }
-
+    /**
+     * Sets the initial data for the adapter.
+     *
+     * @param transactions List of transactions to initially display.
+     */
     fun setData(transactions: List<Transaction>) {
         this.transactions = transactions
         notifyDataSetChanged()
