@@ -29,7 +29,7 @@ A new section has been added to the application to help users set and manage the
 - **Savings Goals**: Set, track, and manage your savings goals with detailed progress indicators and contribution tracking.
 
 ## Requirements
-- Android 5.0 or higher
+- Android 14 or higher
 
 ## Task Distribution and Planning
 - **Task Assignment**: Tasks are assigned based on team members' expertise and availability.
