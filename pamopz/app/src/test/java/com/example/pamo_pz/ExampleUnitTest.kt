@@ -17,6 +17,13 @@ class ExampleUnitTest {
         assertEquals(4, 2 + 2)
     }
 
+
+}
+/**
+ * Unit tests for [GoalDetailsActivity] methods related to goal progress calculations.
+ */
+class GoalDetailsActivityUnitTest {
+
     private val activity: GoalDetailsActivity = mock()
 
     @Test
@@ -27,7 +34,6 @@ class ExampleUnitTest {
         assertEquals("Progress: 100%", activity.getProgress(100.0, 100.0))
         assertEquals("Progress: 25%", activity.getProgress(200.0, 50.0))
     }
-
     @Test
     fun testGetMonthsLeft() {
         assertEquals("5 months", activity.getMonthsLeft(1000.0, 500.0, 100.0))
@@ -45,5 +51,4 @@ class ExampleUnitTest {
         assertEquals("$150.0", activity.getRemainingValue(300.0, 150.0))
         assertEquals("$50.0", activity.getRemainingValue(100.0, 50.0))
     }
-
 }
