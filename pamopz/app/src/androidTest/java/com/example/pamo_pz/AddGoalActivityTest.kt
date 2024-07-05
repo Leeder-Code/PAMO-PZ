@@ -14,7 +14,13 @@ class AddGoalActivityTest {
     @Test
     fun testMonkey() {
         // Launch the AddGoalActivity
-        ActivityScenario.launch(AddGoalActivity::class.java)
+        ActivityScenario.launch(MainActivity::class.java)
+
+        onView(withId((R.id.btnSavings))).perform(click())
+        onView(withId((R.id.buttonAddGoal))).perform(click())
+
+
+//        ActivityScenario.launch(AddGoalActivity::class.java)
 
         // Perform random interactions
         repeat(10) {
@@ -29,8 +35,9 @@ class AddGoalActivityTest {
             // Wait for the data to be saved (optional)
             Thread.sleep(1000)
 
+            onView(withId((R.id.buttonAddGoal))).perform(click())
             // Re-launch the activity (simulate going back)
-            ActivityScenario.launch(AddGoalActivity::class.java)
+//            ActivityScenario.launch(AddGoalActivity::class.java)
         }
     }
 

@@ -14,11 +14,14 @@ import org.junit.runner.RunWith
 class AddExpenseActivityTest {
 
     @get:Rule
-    var activityRule: ActivityScenarioRule<AddExpenseActivity> =
-        ActivityScenarioRule(AddExpenseActivity::class.java)
+    var activityRule: ActivityScenarioRule<MainActivity> =
+        ActivityScenarioRule(MainActivity::class.java)
 
     @Test
     fun testFillAndSubmitExpenseForm() {
+        // Go to Add Expense
+        Espresso.onView(withId(R.id.btnAdd))
+            .perform(click())
         // Typing expense name
         Espresso.onView(withId(R.id.editTextExpenseName))
             .perform(typeText("Groceries"), closeSoftKeyboard())
@@ -40,6 +43,7 @@ class AddExpenseActivityTest {
         // Clicking on submit button
         Espresso.onView(withId(R.id.buttonSubmitExpense))
             .perform(click())
+        Thread.sleep(5000)
     }
 
     private fun withSpinnerText(text: String): org.hamcrest.Matcher<Any> {

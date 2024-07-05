@@ -12,7 +12,7 @@ import java.time.format.TextStyle
 import java.util.Locale
 import kotlin.properties.Delegates
 
-class GoalDetailsActivity : AppCompatActivity() {
+open class GoalDetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGoalDetailsBinding
 
     /**
@@ -41,11 +41,11 @@ class GoalDetailsActivity : AppCompatActivity() {
         id = intent.getIntExtra("id", 0)
 
         binding.textViewGoalName.text = name
-        binding.textViewProgress.text = getProgress()
-        binding.textViewRemainingAmount.text = getRemainingValue()
+        binding.textViewProgress.text = getProgress(value, target)
+        binding.textViewRemainingAmount.text = getRemainingValue(target, value)
         binding.textViewSavedAmount.text = "$$value"
-        binding.textViewMonthsLeft.text = getMonthsLeft()
-        binding.textViewMonthlyDepositAmount.text = "$${monthlyDeposit}"
+        binding.textViewMonthsLeft.text = getMonthsLeft(target, value, monthlyDeposit)
+        binding.progressBarGoal.setProgress((value/target*100).toInt())
 
         getTransactions()
         transactionAdapter = TransactionAdapter(listOf())
@@ -53,7 +53,7 @@ class GoalDetailsActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@GoalDetailsActivity)
             adapter = transactionAdapter
         }
-        binding.textViewMonthlyDepositAmount.setOnClickListener {
+        binding.buttonMonthlyDeposit.setOnClickListener {
             updateGoal()
         }
     }
@@ -68,7 +68,7 @@ class GoalDetailsActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateGoal() {
+    fun updateGoal() {
         GlobalScope.launch {
             if (target < value + monthlyDeposit) {
                 return@launch
@@ -76,9 +76,10 @@ class GoalDetailsActivity : AppCompatActivity() {
             value = value + monthlyDeposit
             runOnUiThread {
                 binding.textViewSavedAmount.text = "$${value}"
-                binding.textViewProgress.text = getProgress()
-                binding.textViewMonthsLeft.text = getMonthsLeft()
-                binding.textViewRemainingAmount.text = getRemainingValue()
+                binding.textViewProgress.text = getProgress(target, value)
+                binding.textViewMonthsLeft.text = getMonthsLeft(target, value, monthlyDeposit)
+                binding.textViewRemainingAmount.text = getRemainingValue(target, value)
+                binding.progressBarGoal.setProgress((value/target*100).toInt())
             }
             val goal = Goal(name, description, value, monthlyDeposit, target, id)
             db.goalsDao().update(goal)
@@ -97,14 +98,14 @@ class GoalDetailsActivity : AppCompatActivity() {
         }
     }
 
-    private fun getProgress(): String {
+    fun getProgress(target: Double, value: Double): String {
         return "Progress: ${(value / target * 100).toInt()}%"
     }
 
-    private fun getMonthsLeft(): String {
+    fun getMonthsLeft(target: Double, value: Double, monthlyDeposit: Double): String {
         return "${((target-value) / monthlyDeposit).toInt()} months"
     }
-    private fun getRemainingValue(): String{
+    fun getRemainingValue(target: Double, value: Double): String{
         return "$${(target - value)}"
     }
 }
