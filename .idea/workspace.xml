@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16903fa5-0319-4c53-be8c-dde96407b3e0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/screens/todo-poprawa-v4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="16903fa5-0319-4c53-be8c-dde96407b3e0" name="Changes" comment="update readme - day 4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +35,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/szend/Downloads/PAMO"
+    "last_opened_file_path": "C:/Users/szend/Downloads/PAMO/pamopz"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -56,6 +53,19 @@
       <option name="presentableId" value="Default" />
       <updated>1720027504221</updated>
     </task>
+    <task id="LOCAL-00001" summary="update readme - day 4">
+      <option name="closed" value="true" />
+      <created>1720134014324</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720134014324</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update readme - day 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="update readme - day 4" />
   </component>
 </project>
